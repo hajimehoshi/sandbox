@@ -1,0 +1,10 @@
+<script>
+var context = new window.AudioContext();
+var oscillator = context.createOscillator();
+oscillator.connect(context.destination);
+oscillator.start();
+document.onclick = () => {
+  context.resume();
+};
+</script>
+<a href="https://www.google.com">Google</a>
