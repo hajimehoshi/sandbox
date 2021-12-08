@@ -1,5 +1,8 @@
 <script>
   window.foo = new Worker('worker.js');
+  window.foo.onmessage = (e) => {
+    document.getElementById('messageFromWorker').textContent = e.data;
+  };
 
   let i = 0;
   const loop = () => {
@@ -10,4 +13,5 @@
   requestAnimationFrame(loop);
 </script>
 <p id="message"></p>
+<p>Message from the worker <span id="messageFromWorker"></span></p>
 <a href="https://google.com/">Google.com</a>
