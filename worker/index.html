@@ -1,0 +1,12 @@
+<script>
+  window.foo = new Worker('worker.js');
+
+  let i = 0;
+  const loop = () => {
+    document.getElementById('message').textContent = i;
+    i++;
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+</script>
+<p id="message"></p>
